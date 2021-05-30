@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-
-{% block signin %}
-    <form method="post" action="{% url 'signin_page' %}">
-        {% csrf_token %}
-        {{ registration_form }}
-        <input type="SUBMIT" value="sign up">
-    </form>
-{% endblock signin %}
