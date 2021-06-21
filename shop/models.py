@@ -5,18 +5,6 @@ from django.db.models.deletion import CASCADE
 from django.db.models.fields.related import ForeignKey
 
 
-# class Item(models.Model):
-#     def save_to(self, filename):
-#         file_type = filename.split(".")[-1]
-#         file_name = ".".join(["{}/{}", file_type])
-#         return file_name.format(self.name, randrange(1000000, 9999999))
-
-#     name = models.CharField(max_length=100)
-#     image = models.ImageField(upload_to=save_to)
-
-#     class Meta:
-#         db_table = "items"
-
 
 class Product(models.Model):
     def save_to(self, filename):
@@ -40,6 +28,6 @@ class Cart(models.Model):
     deal_id = ForeignKey('Deal', on_delete=CASCADE)
 
 class Deal(models.Model):
-    client_id = models.IntegerField() # надо подумать как связать с БД пользователей
+    client_id = models.IntegerField() 
     deal_date = models.DateField()
     delivery_date = models.DateTimeField()
